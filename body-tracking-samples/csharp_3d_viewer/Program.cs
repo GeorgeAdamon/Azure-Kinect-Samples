@@ -28,7 +28,7 @@ namespace Csharp_3d_viewer
                     var deviceCalibration = device.GetCalibration();
                     PointCloud.ComputePointCloudCache(deviceCalibration);
 
-                    using (Tracker tracker = Tracker.Create(deviceCalibration, new TrackerConfiguration() { ProcessingMode = TrackerProcessingMode.Gpu, SensorOrientation = SensorOrientation.Default }))
+                    using (Tracker tracker = Tracker.Create(deviceCalibration, new TrackerConfiguration() { ProcessingMode = TrackerProcessingMode.Cuda, SensorOrientation = SensorOrientation.Default }))
                     {
                         while (renderer.IsActive)
                         {
